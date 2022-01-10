@@ -1,0 +1,21 @@
+{% extends "base.html"%}
+
+
+{% block content%}
+
+
+<form action="/del" method="get">
+    <ul class="list-group list-group-flush" id="notes">
+        {% for note in content %}
+        <li class="list-group-item" name="note">
+          {{ note[1] }}
+          <button type="button" class="close" onClick='deleteNote("{{ note[0] }}")'>
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </li>   
+        {% endfor %}
+      </ul>
+</form>
+
+ {%endblock content%}
+
